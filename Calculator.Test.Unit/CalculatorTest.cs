@@ -24,18 +24,23 @@ namespace Calculator.Test.Unit
         [Test]
         public void Add2Numbers_ReturnSumOfNumbersAdded()
         {
-            //Arrange
+            ///Arrange
             //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
 
             //Act
             uut.Add(2.5, 5.5);
             uut.Add(-2.5, 5.5);
             uut.Add(-2.5, -5.5);
+            uut.Add(-3.5, -5.5);
 
             // Assert
             Assert.That(uut.Add(2.5, 5.5), Is.EqualTo(8));
             Assert.That(uut.Add(-2.5, 5.5), Is.EqualTo(3));
             Assert.That(uut.Add(-2.5, -5.5), Is.EqualTo(-8));
+            Assert.That(uut.Add(-3.5, -5.5), Is.EqualTo(-9));
+
+
+
 
 
 
