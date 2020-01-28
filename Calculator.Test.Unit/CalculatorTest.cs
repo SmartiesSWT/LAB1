@@ -32,12 +32,14 @@ namespace Calculator.Test.Unit
             uut.Add(-2.5, 5.5);
             uut.Add(-2.5, -5.5);
             uut.Add(-3.5, -5.5);
+            uut.Add(-4.5, -5.5);
 
             // Assert
             Assert.That(uut.Add(2.5, 5.5), Is.EqualTo(8));
             Assert.That(uut.Add(-2.5, 5.5), Is.EqualTo(3));
             Assert.That(uut.Add(-2.5, -5.5), Is.EqualTo(-8));
             Assert.That(uut.Add(-3.5, -5.5), Is.EqualTo(-9));
+            Assert.That(uut.Add(-4.5, -5.5), Is.EqualTo(-10));
 
 
 
