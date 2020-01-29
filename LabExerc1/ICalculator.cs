@@ -21,5 +21,15 @@ namespace LabExerc1
 
         void Clear();
 
+        double Add(double a);
+
+        double Subtract(double a);
+
+        double Multiply(double a);
+
+        double Power(double a);
+
+        double Divide(double a);
+
     }
 }

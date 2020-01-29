@@ -51,5 +51,36 @@ namespace LabExerc1
         {
             Accumulator = 0;
         }
+
+        public double Add(double a)
+        {
+            return Accumulator += a;
+        }
+
+        public double Subtract(double a)
+        {
+            return Accumulator -= a;
+        }
+
+        public double Multiply(double a)
+        {
+            return Accumulator *= a;
+        }
+
+        public double Power(double a)
+        {
+            return Accumulator = Math.Pow(Accumulator, a);
+        }
+
+        public double Divide(double a)
+        {
+
+            if (a == 0)
+            {
+                throw new ZeroException();
+            }
+
+            return Accumulator /= a;
+        }
     }
 }

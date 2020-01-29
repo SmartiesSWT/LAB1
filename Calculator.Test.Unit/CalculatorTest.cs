@@ -140,5 +140,50 @@ namespace Calculator.Test.Unit
             uut.Clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
+
+        [Test]
+        public void OverloadAdd_AccumulatorAdd()
+        {
+            // Assert
+            uut.Clear();
+            Assert.That(uut.Add(5), Is.EqualTo(5));
+            Assert.That(uut.Add(3), Is.EqualTo(8));
+        }
+
+        [Test]
+        public void OverloadSubtract_AccumulatorSubtract()
+        {
+            // Assert
+            uut.Clear();
+            Assert.That(uut.Add(5), Is.EqualTo(5));
+            Assert.That(uut.Subtract(3), Is.EqualTo(2));
+        }
+
+        [Test]
+        public void OverloadMultiply_AccumulatorMultiply()
+        {
+            // Assert
+            uut.Clear();
+            Assert.That(uut.Add(5), Is.EqualTo(5));
+            Assert.That(uut.Multiply(3), Is.EqualTo(15));
+        }
+
+        [Test]
+        public void OverloadPower_AccumulatorPower()
+        {
+            // Assert
+            uut.Clear();
+            Assert.That(uut.Add(5), Is.EqualTo(5));
+            Assert.That(uut.Power(2), Is.EqualTo(25));
+        }
+
+        [Test]
+        public void OverloadDivide_AccumulatorDivide()
+        {
+            // Assert
+            uut.Clear();
+            Assert.That(uut.Add(5), Is.EqualTo(5));
+            Assert.That(uut.Divide(2), Is.EqualTo(2.5));
+        }
     }
 }
