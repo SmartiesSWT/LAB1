@@ -136,6 +136,8 @@ namespace Calculator.Test.Unit
         public void Clear_SetAccumulatorToZero()
         {
             // Assert
+            Assert.That(uut.Divide(9, 3), Is.EqualTo(3));
+            uut.Clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
     }
