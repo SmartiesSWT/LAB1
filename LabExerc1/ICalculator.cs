@@ -19,6 +19,7 @@ namespace LabExerc1
 
         double Divide(double a, double b);
 
+        void Clear();
 
     }
 }

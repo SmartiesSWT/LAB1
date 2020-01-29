@@ -131,5 +131,12 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Accumulator, Is.EqualTo(3));
 
         }
+
+        [Test]
+        public void Clear_SetAccumulatorToZero()
+        {
+            // Assert
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+        }
     }
 }
