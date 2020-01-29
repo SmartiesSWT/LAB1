@@ -33,6 +33,10 @@ namespace LabExerc1
             Console.WriteLine("Power({0}, {1}) = {2}", -2.0, 3.0, uut.Power(-2.0, 3.0));
             Console.WriteLine("Power({0}, {1}) = {2}", -2.0, -3.0, uut.Power(-2.0, -3.0));
 
+            // Test Divide()
+            Console.WriteLine("Divide({0}, {1}) = {2}", 6.0, 3.0, uut.Power(6.0, 3.0));
+            Console.WriteLine("Divide({0}, {1}) = {2}", 10.0, 3.0, uut.Power(9.0, 3.0));
+            Console.WriteLine("Divide({0}, {1}) = {2}", 5.0, 0.0, uut.Power(5.0, 0.0));
         }
     }
 }

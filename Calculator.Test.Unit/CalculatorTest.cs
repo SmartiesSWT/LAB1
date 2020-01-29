@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LabExerc1;
 using NUnit.Framework;
 
 namespace Calculator.Test.Unit
@@ -99,6 +100,25 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Power(2, 3), Is.EqualTo(8));
             Assert.That(uut.Power(-2, 3), Is.EqualTo(-8));
             Assert.That(uut.Power(-2, -3), Is.EqualTo(-0.125));
+
+        }
+
+
+        [Test]
+        public void Divide2Numbers_ReturnSumOfNumbersDivided()
+        {
+            // Arrange
+            //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
+
+            // Act
+            //uut.Divide(6, 3);
+            //uut.Divide(9, 3);
+            //uut.Divide(5, 0);
+
+            // Assert
+            Assert.That(uut.Divide(6, 3), Is.EqualTo(2));
+            Assert.That(uut.Divide(9, 3), Is.EqualTo(3));
+            Assert.That(() => uut.Divide(5, 0), Throws.TypeOf<ZeroException>());
 
         }
     }

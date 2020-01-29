@@ -27,5 +27,17 @@ namespace LabExerc1
         {
             return Math.Pow(a, b);
         }
+
+        public double Divide(double a, double b)
+        {
+
+            if (b == 0)
+            {
+                throw new ZeroException();
+            }
+
+            return a / b;
+
+        }
     }
 }

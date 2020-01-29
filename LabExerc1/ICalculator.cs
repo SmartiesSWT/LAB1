@@ -16,5 +16,7 @@ namespace LabExerc1
 
         double Power(double a, double b);
 
+        double Divide(double a, double b);
+
     }
 }
