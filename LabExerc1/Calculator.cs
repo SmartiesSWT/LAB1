@@ -8,24 +8,29 @@ namespace LabExerc1
 {
     public class Calculator : ICalculator
     {
+        public Calculator()
+        {
+            Accumulator = 0;
+        }
+
         public double Add(double a, double b)
         {
-            return a + b;
+            return Accumulator = a + b;
         }
 
         public double Subtract(double a, double b)
         {
-            return a - b;
+            return Accumulator = a - b;
         }
 
         public double Multiply(double a, double b)
         {
-            return a * b;
+            return Accumulator = a * b;
         }
 
         public double Power(double a, double b)
         {
-            return Math.Pow(a, b);
+            return Accumulator = Math.Pow(a, b);
         }
 
         public double Divide(double a, double b)
@@ -36,8 +41,10 @@ namespace LabExerc1
                 throw new ZeroException();
             }
 
-            return a / b;
+            return Accumulator = a / b;
 
         }
+
+        public double Accumulator { get; private set;}
     }
 }

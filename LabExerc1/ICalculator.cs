@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace LabExerc1
         double Power(double a, double b);
 
         double Divide(double a, double b);
+
 
     }
 }

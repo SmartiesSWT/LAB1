@@ -121,5 +121,15 @@ namespace Calculator.Test.Unit
             Assert.That(() => uut.Divide(5, 0), Throws.TypeOf<ZeroException>());
 
         }
+
+
+        [Test]
+        public void Accumulator_ReturnLastestFunction()
+        {
+            // Assert
+            Assert.That(uut.Divide(9, 3), Is.EqualTo(3));
+            Assert.That(uut.Accumulator, Is.EqualTo(3));
+
+        }
     }
 }
