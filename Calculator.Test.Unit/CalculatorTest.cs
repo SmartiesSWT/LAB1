@@ -22,7 +22,7 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(4,0,4)]
-        [TestCase(3, 0, 4)]
+        [TestCase(3, 0, 3)]
         public void Add2Numbers_ReturnSumOfNumbersAddedJenkins(int a, int b, int result)
         {
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
