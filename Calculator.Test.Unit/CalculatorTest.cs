@@ -21,7 +21,14 @@ namespace Calculator.Test.Unit
             uut = new LabExerc1.Calculator();
         }
 
-        
+        [TestCase(4,0,4)]
+        public void Add2Numbers_ReturnSumOfNumbersAddedJenkins(int a, int b, int result)
+        {
+            Assert.That(uut.Add(a, b), Is.EqualTo(result));
+        }
+
+
+
         [Test]
         public void Add2Numbers_ReturnSumOfNumbersAdded()
         {
@@ -41,12 +48,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(-2.5, -5.5), Is.EqualTo(-8));
             Assert.That(uut.Add(-3.5, -5.5), Is.EqualTo(-9));
             Assert.That(uut.Add(-4.5, -5.5), Is.EqualTo(-10));
-
-
-
-
-
-
         }
 
         [Test]
