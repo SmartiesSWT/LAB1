@@ -34,10 +34,12 @@ namespace LabExerc1
             {
                 a *= -1;
 
-                if (b % 2 != 0)
+                if (b % 2 == 0)
                 {
-                    return Accumulator = -Math.Pow(a, b);
+                    return Accumulator = Math.Pow(a, b);
                 }
+
+                return Accumulator = -Math.Pow(a, b);
             }
 
             return Accumulator = Math.Pow(a, b);
@@ -80,6 +82,22 @@ namespace LabExerc1
 
         public double Power(double a)
         {
+
+            if (Accumulator < 0)
+            {
+                Accumulator *= -1;
+
+                if (a % 2 == 0)
+                {
+                    return Accumulator = Math.Pow(Accumulator, a);
+                }
+
+                return Accumulator = -Math.Pow(Accumulator, a);
+            }
+
+            return Accumulator = Math.Pow(Accumulator, a);
+
+            /*
             if (Accumulator < 0)
             {
                 Accumulator *= -1;
@@ -90,6 +108,7 @@ namespace LabExerc1
                 }
             }
             return Accumulator = -1* Math.Pow(Accumulator, a);
+            */
         }
 
         public double Divide(double a)

@@ -127,13 +127,24 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(2, 4)]
-        [TestCase(3, 8)]
-        [TestCase(-4, -0.0625)]
-        public void OverloadPower_AccumulatorPower(double a, double result)
+        [TestCase(3, -8)]
+        [TestCase(-4, 0.0625)]
+        public void OverloadPower_Negative_AccumulatorPower(double a, double result)
         {
             // Assert
             uut.Clear();
             uut.Add(-1,-1);
+            Assert.That(uut.Power(a), Is.EqualTo(result));
+        }
+
+        [TestCase(2, 4)]
+        [TestCase(3, 8)]
+        [TestCase(-4, 0.0625)]
+        public void OverloadPower_Positive_AccumulatorPower(double a, double result)
+        {
+            // Assert
+            uut.Clear();
+            uut.Add(1, 1);
             Assert.That(uut.Power(a), Is.EqualTo(result));
         }
 
