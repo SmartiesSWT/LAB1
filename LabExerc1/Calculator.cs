@@ -35,7 +35,8 @@ namespace LabExerc1
 
         public double Divide(double a, double b)
         {
-
+            // Hvis man prøver at dele med 0 kastes der en exeption, da dette ikke 
+            // er lovligt i den matematiske verden! 
             if (b == 0)
             {
                 throw new ZeroException();
