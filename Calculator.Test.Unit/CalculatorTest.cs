@@ -36,13 +36,6 @@ namespace Calculator.Test.Unit
             ///Arrange
             //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
 
-            //Act
-            uut.Add(2.5, 5.5);
-            uut.Add(-2.5, 5.5);
-            uut.Add(-2.5, -5.5);
-            uut.Add(-3.5, -5.5);
-            uut.Add(-4.5, -5.5);
-
             // Assert
             Assert.That(uut.Add(2.5, 5.5), Is.EqualTo(8));
             Assert.That(uut.Add(-2.5, 5.5), Is.EqualTo(3));
@@ -57,11 +50,6 @@ namespace Calculator.Test.Unit
             // Arrange
             //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
 
-            // Act
-            uut.Subtract(5.5, 2.5);
-            uut.Subtract(-5.5, 2.5);
-            uut.Subtract(-5.5, -2.5);
-
             // Assert
             Assert.That(uut.Subtract(5.5, 2.5), Is.EqualTo(3));
             Assert.That(uut.Subtract(-5.5, 2.5), Is.EqualTo(-8));
@@ -74,11 +62,6 @@ namespace Calculator.Test.Unit
         {
             // Arrange
             //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
-            // Act
-            uut.Multiply(5, 2);
-            uut.Multiply(-5, 2);
-            uut.Multiply(-5, -2);
 
             // Assert
             Assert.That(uut.Multiply(5, 2), Is.EqualTo(10));
@@ -93,11 +76,6 @@ namespace Calculator.Test.Unit
             // Arrange
             //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
 
-            // Act
-            uut.Power(2, 3);
-            uut.Power(-2, 3);
-            uut.Power(-2, -3);
-
             // Assert
             Assert.That(uut.Power(2, 3), Is.EqualTo(8));
             Assert.That(uut.Power(-2, 3), Is.EqualTo(-8));
@@ -111,11 +89,6 @@ namespace Calculator.Test.Unit
         {
             // Arrange
             //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
-            // Act
-            //uut.Divide(6, 3);
-            //uut.Divide(9, 3);
-            //uut.Divide(5, 0);
 
             // Assert
             Assert.That(uut.Divide(6, 3), Is.EqualTo(2));
