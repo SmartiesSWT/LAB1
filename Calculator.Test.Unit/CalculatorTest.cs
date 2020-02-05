@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,142 +24,128 @@ namespace Calculator.Test.Unit
 
         [TestCase(4,0,4)]
         [TestCase(3, 0, 3)]
-        public void Add2Numbers_ReturnSumOfNumbersAddedJenkins(int a, int b, int result)
+        [TestCase(-3, -9, -12)]
+        public void Add2Numbers_ReturnSumOfNumbersAdded(double a, double b, double result)
         {
             Assert.That(uut.Add(a, b), Is.EqualTo(result));
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
         }
 
 
-
-        [Test]
-        public void Add2Numbers_ReturnSumOfNumbersAdded()
+        [TestCase(5.5, 2.5, 3)]
+        [TestCase(-5.5, 2.5, -8)]
+        [TestCase(-5.5, -2.5, -3)]
+        public void Subtract2Numbers_ReturnSumOfNumbersSubtracted(double a, double b, double result)
         {
-            ///Arrange
-            //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
             // Assert
-            Assert.That(uut.Add(2.5, 5.5), Is.EqualTo(8));
-            Assert.That(uut.Add(-2.5, 5.5), Is.EqualTo(3));
-            Assert.That(uut.Add(-2.5, -5.5), Is.EqualTo(-8));
-            Assert.That(uut.Add(-3.5, -5.5), Is.EqualTo(-9));
-            Assert.That(uut.Add(-4.5, -5.5), Is.EqualTo(-10));
+            Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
         }
 
-        [Test]
-        public void Subtract2Numbers_ReturnSumOfNumbersSubtracted()
+        [TestCase(5, 2, 10)]
+        [TestCase(-5, 2, -10)]
+        [TestCase(-5, -2, 10)]
+        public void Multiply2Numbers_ReturnSumOfNumbersMultiplied(double a, double b, double result)
         {
-            // Arrange
-            //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
             // Assert
-            Assert.That(uut.Subtract(5.5, 2.5), Is.EqualTo(3));
-            Assert.That(uut.Subtract(-5.5, 2.5), Is.EqualTo(-8));
-            Assert.That(uut.Subtract(-5.5, -2.5), Is.EqualTo(-3));
-
+            uut.Clear();
+            Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
         }
 
-        [Test]
-        public void Multiply2Numbers_ReturnSumOfNumbersMultiplied()
+        [TestCase(2, 3, 8)]
+        [TestCase(-2, 3, -8)]
+        [TestCase(-2, -3, -0.125)]
+        public void PowerOfNumber_addedPower_ReturnSumOfNumberWithAddedPower(double a, double b, double result)
         {
-            // Arrange
-            //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
             // Assert
-            Assert.That(uut.Multiply(5, 2), Is.EqualTo(10));
-            Assert.That(uut.Multiply(-5, 2), Is.EqualTo(-10));
-            Assert.That(uut.Multiply(-5, -2), Is.EqualTo(10));
-
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
         }
 
-        [Test]
-        public void PowerOfNumber_addedPower_ReturnSumOfNumberWithAddedPower()
+        [TestCase(6, 3, 2)]
+        [TestCase(9, 3, 3)]
+        [TestCase(-5, 1, -5)]
+        public void Divide2Numbers_ReturnSumOfNumbersDivided(double a, double b, double result)
         {
-            // Arrange
-            //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
             // Assert
-            Assert.That(uut.Power(2, 3), Is.EqualTo(8));
-            Assert.That(uut.Power(-2, 3), Is.EqualTo(-8));
-            Assert.That(uut.Power(-2, -3), Is.EqualTo(-0.125));
+            Assert.That(uut.Divide(a, b), Is.EqualTo(result));
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
 
-        }
-
-
-        [Test]
-        public void Divide2Numbers_ReturnSumOfNumbersDivided()
-        {
-            // Arrange
-            //var uut = new LabExerc1.Calculator();                           // Anvendes i Setup metoden
-
-            // Assert
-            Assert.That(uut.Divide(6, 3), Is.EqualTo(2));
-            Assert.That(uut.Divide(9, 3), Is.EqualTo(3));
+            // Test af Exception
             Assert.That(() => uut.Divide(5, 0), Throws.TypeOf<ZeroException>());
-
         }
 
 
-        [Test]
-        public void Accumulator_ReturnLastestFunction()
+        [TestCase(6, 3, 2)]
+        public void Accumulator_ReturnLastestFunction(double a, double b, double result)
         {
             // Assert
-            Assert.That(uut.Divide(9, 3), Is.EqualTo(3));
-            Assert.That(uut.Accumulator, Is.EqualTo(3));
+            Assert.That(uut.Divide(a, b), Is.EqualTo(result));
+            Assert.That(uut.Accumulator, Is.EqualTo(result));
 
         }
 
-        [Test]
-        public void Clear_SetAccumulatorToZero()
+        [TestCase(6, 3, 2)]
+        public void Clear_SetAccumulatorToZero(double a, double b, double result)
         {
             // Assert
-            Assert.That(uut.Divide(9, 3), Is.EqualTo(3));
+            Assert.That(uut.Divide(a, b), Is.EqualTo(result));
             uut.Clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
 
-        [Test]
-        public void OverloadAdd_AccumulatorAdd()
+        [TestCase(5, 5)]
+        [TestCase(3, 3)]
+        [TestCase(1, 1)]
+        public void OverloadAdd_AccumulatorAdd(double a, double result)
         {
             // Assert
             uut.Clear();
-            Assert.That(uut.Add(5), Is.EqualTo(5));
-            Assert.That(uut.Add(3), Is.EqualTo(8));
+            Assert.That(uut.Add(a), Is.EqualTo(result));
         }
 
-        [Test]
-        public void OverloadSubtract_AccumulatorSubtract()
+        [TestCase(5, -5)]
+        [TestCase(3, -3)]
+        [TestCase(1, -1)]
+        public void OverloadSubtract_AccumulatorSubtract(double a, double result)
         {
             // Assert
             uut.Clear();
-            Assert.That(uut.Add(5), Is.EqualTo(5));
-            Assert.That(uut.Subtract(3), Is.EqualTo(2));
+            Assert.That(uut.Subtract(a), Is.EqualTo(result));
         }
 
-        [Test]
-        public void OverloadMultiply_AccumulatorMultiply()
+        [TestCase(5, 35)]
+        [TestCase(3, 21)]
+        [TestCase(1, 7)]
+        public void OverloadMultiply_AccumulatorMultiply(double a, double result)
         {
             // Assert
             uut.Clear();
-            Assert.That(uut.Add(5), Is.EqualTo(5));
-            Assert.That(uut.Multiply(3), Is.EqualTo(15));
+            uut.Add(5, 2); 
+            Assert.That(uut.Multiply(a), Is.EqualTo(result));
         }
 
-        [Test]
-        public void OverloadPower_AccumulatorPower()
+        [TestCase(2, 4)]
+        [TestCase(3, 8)]
+        [TestCase(-4, -0.0625)]
+        public void OverloadPower_AccumulatorPower(double a, double result)
         {
             // Assert
             uut.Clear();
-            Assert.That(uut.Add(5), Is.EqualTo(5));
-            Assert.That(uut.Power(2), Is.EqualTo(25));
+            uut.Add(-1,-1);
+            Assert.That(uut.Power(a), Is.EqualTo(result));
         }
 
-        [Test]
-        public void OverloadDivide_AccumulatorDivide()
+        [TestCase(2, 5)]
+        [TestCase(5, 2)]
+        [TestCase(10, 1)]
+        public void OverloadDivide_AccumulatorDivide(double a, double result)
         {
             // Assert
             uut.Clear();
-            Assert.That(uut.Add(5), Is.EqualTo(5));
-            Assert.That(uut.Divide(2), Is.EqualTo(2.5));
+            uut.Add(5, 5);
+            Assert.That(uut.Divide(a), Is.EqualTo(result));
         }
     }
 }
